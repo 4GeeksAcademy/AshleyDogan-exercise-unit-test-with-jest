@@ -12,10 +12,19 @@ let oneEuroIs = {
     "GBP": 0.87, // british pound
 }
 
-// We include fromEuroToDollar here as well because it needs to be exported
+const fromDollarToYen = function(valueInDollar) {
+    // Convert the given valueInEuro to dollars
+    let valueInYen = valueInDollar * 156.5;
+    // return the dollar value
+    return valueInYen;
+}
 
-
-
+const fromYenToPound = function(valueInYen) {
+    // Convert the given valueInEuro to dollars
+    let valueInPound = valueInYen * 0.87;
+    // return the dollar value
+    return valueInPound;
+}
 
 
 // This is my function that sums two numbers
@@ -28,4 +37,4 @@ console.log(sum(7,3))
 
 // Export the function to be used on other files 
 // (similar to the keyword "export" when using webpack)
-module.exports = { sum, fromEuroToDollar }
+module.exports = { sum, fromEuroToDollar, fromDollarToYen, fromYenToPound }
